@@ -26,65 +26,73 @@ async function changeLanguage(lang) {
         const data = await response.json();
         const content = data[lang];
 
+        const updateElement = (selector, value, isHTML = false, isId = false) => {
+            const el = isId ? document.getElementById(selector) : document.querySelector(selector);
+            if (el) {
+                if (isHTML) el.innerHTML = value;
+                else el.innerText = value;
+            }
+        };
+
         // 1. Temel Başlık ve Hakkımda
-        document.querySelector('.cv-name').innerText = content.header_name;
-        document.querySelector('.cv-title').innerText = content.header_title;
-        document.querySelector('.lang-about-title').innerText = content.about_h2;
-        document.querySelector('.lang-about-text').innerText = content.about_p;
+        updateElement('.cv-name', content.header_name);
+        updateElement('.cv-title', content.header_title);
+        updateElement('.lang-about-title', content.about_h2);
+        updateElement('.lang-about-text', content.about_p);
 
         // 2. Eğitim Bölümü
-        document.querySelector('.lang-edu-title').innerText = content.edu_h2;
-        document.querySelector('.lang-edu-dept').innerText = content.edu_dept;
-        document.querySelector('.lang-edu-pedagogy').innerText = content.edu_pedagogy;
+        updateElement('.lang-edu-title', content.edu_h2);
+        updateElement('.lang-edu-dept', content.edu_dept);
+        updateElement('.lang-edu-pedagogy', content.edu_pedagogy);
 
-        // 3. İş Deneyimi (ID'ler ile eşleşme)
-        document.querySelector('.lang-exp-title').innerText = content.exp_h2;
-        document.getElementById('exp-1').innerHTML = content.exp_1;
-        document.getElementById('exp-2').innerHTML = content.exp_2;
-        document.getElementById('exp-3').innerHTML = content.exp_3;
-        document.getElementById('exp-4').innerHTML = content.exp_4;
-        document.getElementById('exp-5').innerHTML = content.exp_5;
+        // 3. İş Deneyimi
+        updateElement('.lang-exp-title', content.exp_h2);
+        for(let i=1; i<=5; i++) {
+            updateElement(`exp-${i}`, content[`exp_${i}`], true, true);
+        }
 
-        // 4. Teknik Yetkinlikler & Sertifikalar
-        document.querySelector('.lang-skills-title').innerText = content.skills_h2;
-        document.querySelector('.lang-skills-db').innerHTML = content.skills_db;
-        document.querySelector('.lang-skills-ai').innerHTML = content.skills_ai;
-        document.querySelector('.lang-cert-title').innerText = content.cert_h2;
-        document.querySelector('.lang-skills-full').innerHTML = content.skills_full;
-        document.querySelector('.lang-skills-basic').innerHTML = content.skills_basic;
+        // 4. Teknik Yetkinlikler
+        updateElement('.lang-skills-title', content.skills_h2);
+        updateElement('.lang-skills-full', content.skills_full, true);
+        updateElement('.lang-skills-db', content.skills_db, true);
+        updateElement('.lang-skills-ai', content.skills_ai, true);
+        updateElement('.lang-skills-basic', content.skills_basic, true);
+        updateElement('.lang-cert-title', content.cert_h2);
 
-        // 5. Projeler ve Kısa Açıklamalar (Hata buradaydı, düzeltildi)
-        document.querySelector('.lang-projects-title').innerText = content.projects_h2;
-        document.querySelector('.lang-proj1-title').innerText = content.proj1_title;
-        document.querySelector('.lang_proj1_short').innerText = content.proj1_short;
-        document.querySelector('.lang-proj2-title').innerText = content.proj2_title;
-        document.querySelector('.lang_proj2_short').innerText = content.proj2_short;
+        // 5. Projeler
+        updateElement('.lang-projects-title', content.projects_h2);
+        updateElement('.lang-proj1-title', content.proj1_title);
+        updateElement('.lang_proj1_short', content.proj1_short);
+        updateElement('.lang-proj2-title', content.proj2_title);
+        updateElement('.lang_proj2_short', content.proj2_short);
 
-        // 6. Proje Modalları İçeriği
-        document.querySelector('.lang-proj1-modal-title').innerText = content.proj1_modal_title;
-        document.querySelector('.lang-proj1-desc').innerText = content.proj1_desc;
-        document.querySelector('.lang-proj2-modal-title').innerText = content.proj2_modal_title;
-        document.querySelector('.lang-proj2-desc').innerText = content.proj2_desc;
+        // 6. Modallar
+        updateElement('.lang-proj1-modal-title', content.proj1_modal_title);
+        updateElement('.lang-proj1-desc', content.proj1_desc);
+        updateElement('.lang-proj2-modal-title', content.proj2_modal_title);
+        updateElement('.lang-proj2-desc', content.proj2_desc);
 
-        // 7. İletişim ve Sidebar
-        document.querySelector('.lang-contact-title').innerText = content.contact_h2;
-        document.querySelector('.lang_location_text').innerText = content.location_text;
-        document.querySelector('.lang-langs-title').innerText = content.lang_h2;
-        document.querySelector('.lang-en-level').innerText = content.lang_en_level;
-        document.querySelector('.lang-accounts-title').innerText = content.acc_h2;
-        document.querySelector('.lang_ref_title').innerText = content.lang_ref_title;
-        document.querySelector('.ref_title_1').innerText = content.ref_title_1;
-        document.querySelector('.ref_title_2').innerText = content.ref_title_2;
-        document.querySelector('.lang-view-cv-text').innerText = content["view-cv-btn"];
+        // 7. İletişim ve Referanslar
+        updateElement('.lang-contact-title', content.contact_h2);
+        updateElement('.lang_location_text', content.location_text);
+        updateElement('.lang-langs-title', content.lang_h2);
+        updateElement('.lang-en-level', content.lang_en_level);
+        updateElement('.lang-accounts-title', content.acc_h2);
+        updateElement('.lang_ref_title', content.lang_ref_title);
+        updateElement('.ref_title_1', content.ref_title_1);
+        updateElement('.ref_title_2', content.ref_title_2);
+        updateElement('.lang-view-cv-text', content["view-cv-btn"]);
 
-        // 8. Butonlar ve İndirme Bölümü
+        // 8. Butonlar
         document.querySelectorAll('.lang-github-text').forEach(btn => btn.innerHTML = content.github_text);
-        document.querySelector('.lang-download-btn').innerHTML = content.download_btn;
-        document.querySelector('.qr-hint').innerHTML = content.qr_code;
+        updateElement('.lang-download-btn', content.download_btn, true);
+        updateElement('.qr-hint', content.qr_code, true);
 
-        // Buton Görünürlüğü Ayarı
-        document.getElementById('btn-en').style.display = lang === 'en' ? 'none' : 'inline-flex';
-        document.getElementById('btn-tr').style.display = lang === 'tr' ? 'none' : 'inline-flex';
+        // Buton Görünürlüğü
+        const btnEn = document.getElementById('btn-en');
+        const btnTr = document.getElementById('btn-tr');
+        if (btnEn) btnEn.style.display = lang === 'en' ? 'none' : 'inline-flex';
+        if (btnTr) btnTr.style.display = lang === 'tr' ? 'none' : 'inline-flex';
 
         localStorage.setItem('selectedLang', lang);
     } catch (e) {
