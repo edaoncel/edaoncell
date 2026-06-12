@@ -74,7 +74,6 @@ async function changeLanguage(lang) {
 
         // 7. İletişim ve Referanslar
         updateElement('.lang-contact-title', content.contact_h2);
-        updateElement('.lang_location_text', content.location_text);
         updateElement('.lang-langs-title', content.lang_h2);
         updateElement('.lang-en-level', content.lang_en_level);
         updateElement('.lang-accounts-title', content.acc_h2);

@@ -40,7 +40,6 @@
     "download_btn": "<i class='fas fa-file-pdf'></i> PDF İndir",
     "qr_code": "Bağlantı kurmak için okutun.",
     "view-cv-btn": "Ön Yazımın Tamamını Görüntüle",
-    "location_text": "Denizli'de çalışmaya uygun",
     "proj1_short": "HTML5, CSS3 ve JavaScript kullanarak geliştirdiğim, kullanıcı deneyimi (UX) odaklı ve tüm cihazlarla uyumlu (responsive) kişisel marka platformu.",
     "proj2_short": "PHP ve SQL tabanlı, ürün ve stok yönetimi sağlayan, tam fonksiyonel CRUD operasyonlarını içeren ve güvenli giriş sistemine sahip full-stack yönetim arayüzü."
   },
@@ -85,7 +84,6 @@
     "download_btn": "<i class='fas fa-file-pdf'></i> Download PDF",
     "qr_code": "Scan to connect.",
     "view-cv-btn": "View Full Cover Letter",
-    "location_text": "Available for work in Denizli",
     "proj1_short": "A user experience (UX) oriented personal branding platform developed using HTML5, CSS3, and JavaScript, fully responsive across all devices.",
     "proj2_short": "A PHP and SQL-based full-stack management interface including full CRUD operations, product and stock management, and a secure login system."
   }
