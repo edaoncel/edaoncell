@@ -16,7 +16,7 @@ function closeModal(id) {
         const iframe = targetModal.querySelector('iframe');
         if (iframe) { iframe.src = iframe.src; }
     }
-    }
+}
 
 async function changeLanguage(lang) {
     try {
@@ -62,15 +62,19 @@ async function changeLanguage(lang) {
         // 5. Projeler
         updateElement('.lang-projects-title', content.projects_h2);
         updateElement('.lang-proj1-title', content.proj1_title);
-        updateElement('.lang_proj1_short', content.proj1_short);
+        updateElement('.lang-proj1-short', content.proj1_short);
         updateElement('.lang-proj2-title', content.proj2_title);
-        updateElement('.lang_proj2_short', content.proj2_short);
+        updateElement('.lang-proj2-short', content.proj2_short);
+        updateElement('.lang-proj3-title', content.proj3_title);
+        updateElement('.lang-proj3-short', content.proj3_short);
 
         // 6. Modallar
         updateElement('.lang-proj1-modal-title', content.proj1_modal_title);
         updateElement('.lang-proj1-desc', content.proj1_desc);
         updateElement('.lang-proj2-modal-title', content.proj2_modal_title);
         updateElement('.lang-proj2-desc', content.proj2_desc);
+        updateElement('.lang-proj3-modal-title', content.proj3_modal_title);
+        updateElement('.lang-proj3-desc', content.proj3_desc);
 
         // 7. İletişim ve Referanslar
         updateElement('.lang-contact-title', content.contact_h2);
@@ -155,5 +159,3 @@ window.onclick = function(event) {
         closeModal(event.target.id);
     }
 };
-
-

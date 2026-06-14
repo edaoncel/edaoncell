@@ -72,24 +72,45 @@
 
                 <section class="projects">
                     <h2 class="lang-projects-title">PROJELERİM</h2>
-                    
-                    <!-- Proje 1 -->
+
+                    <div class="project-item">
+                        <a href="javascript:void(0)" onclick="openModal('modal3')" class="project-link">
+                            <h3 class="lang-proj3-title">GRM İnşaat Kurumsal Web Sitesi</h3>
+                        </a>
+                        <p class="lang-proj3-short">PHP ve Laravel altyapısı ile geliştirilmiş, kurumsal kimliği yansıtan ön yüz ve dinamik veri yönetimi sağlayan yönetim paneline sahip kurumsal inşaat platformu.</p>
+                    </div>
+
                     <div class="project-item">
                         <a href="javascript:void(0)" onclick="openModal('modal1')" class="project-link">
                             <h3 class="lang-proj1-title">Kişisel Portfolyo Web Sitesi</h3>
                         </a>
-                        <p class="lang_proj1_short">HTML5, CSS3 ve JavaScript kullanarak geliştirdiğim, kullanıcı deneyimi (UX) odaklı ve tüm cihazlarla uyumlu (responsive) kişisel marka platformu.</p>
+                        <p class="lang-proj1-short">HTML5, CSS3 ve JavaScript kullanarak geliştirdiğim, kullanıcı deneyimi (UX) odaklı ve tüm cihazlarla uyumlu (responsive) kişisel marka platformu.</p>
                     </div>
 
-                    <!-- Proje 2 -->
                     <div class="project-item">
                         <a href="javascript:void(0)" onclick="openModal('modal2')" class="project-link">
                             <h3 class="lang-proj2-title">E-Ticaret Yönetim Web Sitesi</h3>
                         </a>
-                        <p class="lang_proj2_short">PHP ve SQL tabanlı, ürün ve stok yönetimi sağlayan, tam fonksiyonel CRUD operasyonlarını içeren ve güvenli giriş sistemine sahip full-stack yönetim arayüzü.</p>
+                        <p class="lang-proj2-short">PHP ve SQL tabanlı, ürün ve stok yönetimi sağlayan, tam fonksiyonel CRUD operasyonlarını içeren ve güvenli giriş sistemine sahip full-stack yönetim arayüzü.</p>
                     </div>
                     <br>
-                    <!-- Modal 1 -->
+
+
+                    <div id="modal3" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal3')">&times;</span>
+                            <h3 class="lang-proj3-modal-title">GRM İnşaat Kurumsal Web Sitesi</h3>
+                            <p class="lang-proj3-desc">İnşaat firmasının kurumsal ihtiyaçlarına yönelik olarak PHP ve Laravel altyapısıyla geliştirilmiş kapsamlı bir kurumsal web projesidir. Proje, firmanın dijital varlığını güçlendiren modern bir ön yüz tasarımına ve şirket verilerinin, projelerin ve kurumsal içeriklerin kolayca güncellenebileceği dinamik, kullanıcı dostu bir yönetim paneline sahiptir. Güçlü ve güvenli altyapısıyla kurumsal kimliği en iyi şekilde yansıtan, ölçeklenebilir ve sürdürülebilir bir dijital çözüm sunulmuştur.</p>
+                            <div class="video">
+                                <video width="100%" height="auto" poster="img/kapak.jpg" autoplay muted loop playsinline>
+                                    <source src="img/proje-3.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <a href="https://github.com/edaoncel/grm_insaat" target="_blank" class="github-btn lang-github-text">
+                                <i class="fa-brands fa-github"></i> GitHub'da İncele
+                            </a>
+                        </div>
+                    </div>
                     <div id="modal1" class="modal">
                         <div class="modal-content">
                             <span class="close" onclick="closeModal('modal1')">&times;</span>
@@ -106,7 +127,6 @@
                         </div>
                     </div>
 
-                    <!-- Modal 2 -->
                     <div id="modal2" class="modal">
                         <div class="modal-content">
                             <span class="close" onclick="closeModal('modal2')">&times;</span>
