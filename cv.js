@@ -113,30 +113,26 @@ function toggleDarkMode() {
     icon.classList.replace(isDark ? 'fa-moon' : 'fa-sun', isDark ? 'fa-sun' : 'fa-moon');
 }
 
-// PDF İNDİRME FONKSİYONU
+
 function downloadCV() {
-    window.scrollTo(0, 0);
     const element = document.querySelector('.cv-wrapper');
-    const buttons = document.querySelectorAll('.lang-switch-btn, .theme-btn, .download-section, .language-wrapper, .theme-wrapper');
     
-    buttons.forEach(btn => btn.style.display = 'none');
-
     const opt = {
-        margin: 0,
-        filename: 'Eda_Oncel_CV.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true, scrollY: 0, letterRendering: true },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-        pagebreak: { mode: ['css', 'legacy'], avoid: ['section', 'h2', '.item'] }
-    };
-
+    margin: 0,
+    filename: 'Eda_Oncel_CV.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { 
+        scale: 2, 
+        useCORS: true, 
+        scrollY: 0,
+        windowWidth: document.documentElement.offsetWidth 
+    },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+};
+    element.classList.add('printing');
+    
     html2pdf().set(opt).from(element).save().then(() => {
-        const lang = localStorage.getItem('selectedLang') || 'tr';
-        buttons.forEach(btn => {
-            if (btn.id === 'btn-en' && lang === 'en') btn.style.display = 'none';
-            else if (btn.id === 'btn-tr' && lang === 'tr') btn.style.display = 'none';
-            else btn.style.display = ''; 
-        });
+        element.classList.remove('printing');
     });
 }
 

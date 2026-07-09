@@ -27,7 +27,7 @@ body.dark-mode {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
+    line-height: 1.55;
     color: var(--text-color);
     background-color: var(--bg-color);
     margin: 0;
@@ -36,6 +36,9 @@ body {
     box-sizing: border-box;
     overflow-x: hidden;
     transition: background-color var(--transition-speed), color var(--transition-speed);
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .cv-wrapper {
@@ -418,24 +421,32 @@ body.dark-mode .ref-contact li {
         margin-top: 5px;
     }
 }
+.printing .download-section, 
+.printing .language-wrapper, 
+.printing .theme-wrapper {
+    display: none !important;
+}
 
 @media print {
-    html, body {
-        font-size: 12pt !important;
+    .cv-main-content {
+        display: flex !important;
+        flex-direction: row !important;
+        height: 100% !important; 
+        overflow: hidden !important;
     }
 
     .cv-sidebar {
-        width: 65mm !important;
-        min-width: 65mm !important;
+        flex: 0 0 35% !important;
+        background-color: #f4f4f4 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        height: 100% !important; 
     }
 
-    .cv-content {
-        width: 145mm !important;
-    }
-
-    .single-qr-container img {
-        width: 25mm !important;
-        height: 25mm !important;
+    .cv-sidebar::after {
+        content: "";
+        flex-grow: 1;
+        background-color: #f4f4f4;
     }
 }
 
@@ -764,13 +775,6 @@ body.modal-open {
 
 }
 
-@media print {
-    .theme-wrapper, .language-wrapper { display: none; }
-    .cv-sidebar { width: 65mm !important; }
-    .cv-content { width: 145mm !important; }
-    body { background: white; }
-}
-
 .cv-header {
     padding: 10px 5px;
 }
@@ -781,7 +785,7 @@ body.modal-open {
 }
 
 .cv-title {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin-top: 2px;
 }
 

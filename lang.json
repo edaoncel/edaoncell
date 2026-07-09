@@ -8,11 +8,11 @@
     "edu_dept": "Yönetim Bilişim Sistemleri - Zeliha Tolunay Uygulamalı Teknoloji ve İşletmecilik Yüksekokulu",
     "edu_pedagogy": "Pedagojik Formasyon Eğitimi (Eğitim Fakültesi)",
     "exp_h2": "İŞ DENEYİMİ",
-    "exp_1": "<b>Backend:</b> MVC (Model-View-Controller) yapısı kullanarak PHP tabanlı web uygulamalarının geliştirilmesinde aktif rol aldım.",
-    "exp_2": "<b>Veritabanı Yönetimi:</b> SQL ile veritabanı şemalarının oluşturulması, veri çekme ve CRUD operasyonlarının optimizasyonu süreçlerini yürüttüm.",
-    "exp_3": "<b>Frontend Geliştirme:</b> Kullanıcı arayüzlerinin modernizasyonu için CSS3 ve JavaScript kullanarak responsive tasarımlar uyguladım.",
-    "exp_4": "<b>Yapay Zeka & Görüntü İşleme:</b> Google Colab ve Ultralytics Hub kullanarak görüntü işleme modelleri üzerinde çalıştım.",
-    "exp_5": "<b>Model Eğitimi:</b> Veri setlerinin hazırlanması ve yapay zeka modellerinin eğitilmesi süreçlerini tamamlayarak sistemin doğruluk oranına katkı sağladım.",
+    "exp_1": "<b>Backend:</b> PHP (MVC) yapısı ile web uygulamaları geliştirdim.",
+    "exp_2": "<b>Veri Tabanı:</b> SQL ile şema tasarımı, veri yönetimi ve CRUD operasyonlarını optimize ettim.",
+    "exp_3": "<b>Frontend:</b> CSS3 ve JavaScript ile responsive, modern kullanıcı arayüzleri oluşturdum.",
+    "exp_4": "<b>Yapay Zeka:</b> Ultralytics Hub üzerinden görüntü işleme modelleri üzerinde çalıştım.",
+    "exp_5": "<b>Model Eğitimi:</b> Veri setleri hazırlayarak yapay zeka modellerini eğittim ve başarı oranlarını artırdım.",
     "cert_h2": "SERTİFİKALAR",
     "contact_h2": "İLETİŞİM",
     "skills_h2": "TEKNİK YETKİNLİKLER",
@@ -28,7 +28,7 @@
     "proj2_modal_title": "E-Ticaret Yönetim Web Sitesi",
     "proj2_desc": "Veri yönetimi ve iş mantığı süreçlerini kapsayan, full-stack yaklaşımla geliştirilmiş bir e-ticaret uygulamasıdır. Proje kapsamında, SQL tabanlı ilişkisel veritabanı mimarisi üzerinde ürün, kategori ve stok yönetimini sağlayan kapsamlı bir Yönetici Paneli geliştirilerek tam fonksiyonel CRUD işlemleri hayata geçirilmiştir. Kullanıcı ve yönetici ayrımını sağlayan güvenli giriş sisteminin yanı sıra; ön yüz tarafında ürün listeleme, dinamik arama ve sepet yönetimi gibi e-ticaretin temel süreçlerini yöneten modüllerin geliştirme çalışmaları devam etmektedir. Bu proje ile karmaşık veri yapılarını yönetme ve backend-frontend entegrasyonu konularında yetkinliklerimi pekiştirdim.",
     "proj3_title": "GRM İnşaat Kurumsal Web Sitesi",
-    "proj3_short": "PHP ve Laravel altyapısı ile geliştirilmiş, kurumsal kimliği yansıtan ön yüz ve dinamik veri yönetimi sağlayan yönetim paneline sahip kurumsal inşaat platformu.",
+    "proj3_short": "PHP ve Laravel altyapısı ile geliştirilmiş, ön yüz ve dinamik veri yönetimi sağlayan yönetim paneline sahip kurumsal inşaat platformu.",
     "proj3_modal_title": "GRM İnşaat Kurumsal Web Sitesi",
     "proj3_desc": "İnşaat firmasının kurumsal ihtiyaçlarına yönelik olarak PHP ve Laravel altyapısıyla geliştirilmiş kapsamlı bir kurumsal web projesidir. Proje, firmanın dijital varlığını güçlendiren modern bir ön yüz tasarımına ve şirket verilerinin, projelerin ve kurumsal içeriklerin kolayca güncellenebileceği dinamik, kullanıcı dostu bir yönetim paneline sahiptir. Güçlü ve güvenli altyapısıyla kurumsal kimliği en iyi şekilde yansıtan, ölçeklenebilir ve sürdürülebilir bir dijital çözüm sunulmuştur.",
     "github_text": "<i class='fa-brands fa-github'></i> GitHub'da Kodları İncele",
@@ -44,8 +44,8 @@
     "download_btn": "<i class='fas fa-file-pdf'></i> PDF İndir",
     "qr_code": "Bağlantı kurmak için okutun.",
     "view-cv-btn": "Ön Yazımın Tamamını Görüntüle",
-    "proj1_short": "HTML5, CSS3 ve JavaScript kullanarak geliştirdiğim, kullanıcı deneyimi (UX) odaklı ve tüm cihazlarla uyumlu (responsive) kişisel marka platformu.",
-    "proj2_short": "PHP ve SQL tabanlı, ürün ve stok yönetimi sağlayan, tam fonksiyonel CRUD operasyonlarını içeren ve güvenli giriş sistemine sahip full-stack yönetim arayüzü."
+    "proj1_short": "HTML5, CSS3 ve JavaScript kullanarak geliştirdiğim, kullanıcı deneyimi (UX) odaklı ve responsive uyumlu kişisel marka platformu.",
+    "proj2_short": "PHP ve SQL tabanlı, ürün ve stok yönetimi sağlayan, tam fonksiyonel CRUD operasyonlarını içeren, güvenli giriş sistemine sahip full-stack yönetim arayüzü."
   },
   "en": {
     "header_name": "EDA ÖNCEL",
@@ -56,11 +56,11 @@
     "edu_dept": "Management Information Systems - Zeliha Tolunay School of Applied Technology and Management",
     "edu_pedagogy": "Pedagogical Formation Training (Faculty of Education)",
     "exp_h2": "WORK EXPERIENCE",
-    "exp_1": "<b>Backend:</b> Played an active role in developing PHP-based web applications using MVC (Model-View-Controller) architecture.",
-    "exp_2": "<b>Database Management:</b> Conducted database schema creation, data retrieval, and CRUD operation optimization processes using SQL.",
-    "exp_3": "<b>Frontend Development:</b> Implemented responsive designs using CSS3 and JavaScript for user interface modernization.",
-    "exp_4": "<b>AI & Computer Vision:</b> Worked on computer vision models using Google Colab and Ultralytics Hub.",
-    "exp_5": "<b>Model Training:</b> Completed the processes of preparing datasets and training AI models, contributing to the system's accuracy rate.",
+    "exp_1": "<b>Backend:</b> Developed web applications using the PHP (MVC) architecture.",
+    "exp_2": "<b>Database:</b> Optimized schema design, data management, and CRUD operations using SQL.",
+    "exp_3": "<b>Frontend:</b> Created responsive, modern user interfaces using CSS3 and JavaScript.",
+    "exp_4": "<b>Artificial Intelligence:</b> Worked on image processing models via Ultralytics Hub.",
+    "exp_5": "<b>Model Training:</b> Trained AI models by preparing datasets and improved their success rates.",
     "cert_h2": "CERTIFICATIONS",
     "contact_h2": "CONTACT",
     "skills_h2": "TECHNICAL SKILLS",
@@ -76,7 +76,7 @@
     "proj2_modal_title": "E-Commerce Management Website",
     "proj2_desc": "This is a full-stack e-commerce application designed to handle complex data management and business logic processes. Within the scope of the project, a comprehensive Admin Panel was developed on a SQL-based relational database architecture, implementing full CRUD functionality for product, category, and inventory management. In addition to a secure authentication system, development is ongoing for front-end modules such as product listing and dynamic search. This project has significantly strengthened my skills in managing complex data structures and ensuring seamless backend-frontend integration.",
     "proj3_title": "GRM Construction Corporate Website",
-    "proj3_short": "A corporate construction platform built with a PHP and Laravel backend, featuring a brand-reflective frontend and a dynamic admin panel for data management.",
+    "proj3_short": "A corporate construction platform developed using PHP and Laravel, featuring a management panel that handles the front end and dynamic data management.",
     "proj3_modal_title": "GRM Construction Corporate Website",
     "proj3_desc": "This is a comprehensive corporate web project developed with PHP and Laravel framework tailored to the professional needs of a construction company. The project features a modern frontend design that strengthens the company's digital presence, along with a dynamic, user-friendly admin panel for easily updating corporate content, projects, and data. With its secure and robust infrastructure, it delivers a scalable, sustainable digital solution that perfectly reflects corporate identity.",
     "github_text": "<i class='fa-brands fa-github'></i> View Code on GitHub",
@@ -92,8 +92,8 @@
     "download_btn": "<i class='fas fa-file-pdf'></i> Download PDF",
     "qr_code": "Scan to connect.",
     "view-cv-btn": "View Full Cover Letter",
-    "proj1_short": "A user experience (UX) oriented personal branding platform developed using HTML5, CSS3, and JavaScript, fully responsive across all devices.",
-    "proj2_short": "A PHP and SQL-based full-stack management interface including full CRUD operations, product and stock management, and a secure login system."
+    "proj1_short": "A user experience (UX)-focused, responsive personal brand platform I developed using HTML5, CSS3, and JavaScript.",
+    "proj2_short": "A full-stack management interface built on PHP and SQL, featuring product and stock management, full CRUD functionality, and a secure login system."
   }
 }
 
