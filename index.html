@@ -10,247 +10,85 @@
     <link href="img/1.png" rel="icon" type="image/x-icon">
 </head>
 <body>
-    <div class="cv-wrapper">
-        <div class="language-wrapper">
-            <button id="btn-en" onclick="changeLanguage('en')" class="lang-switch-btn">
-                <i class="fas fa-globe"></i> English
-            </button>
-            <button id="btn-tr" onclick="changeLanguage('tr')" class="lang-switch-btn" style="display: none;">
-                <i class="fas fa-globe"></i> Türkçe
-            </button>
+
+<div class="cv-wrapper">
+    <header class="cv-header">
+        <h1 class="cv-name">EDA ÖNCEL</h1>
+        <h3 id="job_title" class="cv-title">Full Stack Web Developer</h3>
+    </header>
+
+    <div class="content-container">
+        <div class="main-content">
+            <section>
+                <h2 id="about_title">HAKKIMDA</h2>
+                <p id="about_text">Yönetim Bilişim Sistemleri (YBS) lisans mezunuyum. Yazılım geliştirme sürecine analitik bir bakış açısıyla yaklaşıyor; backend mimarileri, veri tabanı optimizasyonu ve modern web teknolojileri üzerinde uzmanlaşıyorum. <br><br> PHP ve Laravel ekosisteminde MVC mimarisi ile ölçeklenebilir projeler geliştirmekte, Fetch API ve asenkron veri yönetimi ile dinamik kullanıcı deneyimleri kurgulamaktayım. Yazılım dünyasındaki güncel eğilimleri yakından takip ediyor; özellikle YOLO ve Ultralytics Hub kullanarak geliştirdiğim görüntü işleme modelleriyle yapay zekayı pratik çözümlere entegre ediyorum. Öğrenmeye tutkulu, çözüm odaklı ve hem backend hem de frontend süreçlerinde bütüncül sorumluluk alabilen bir Full Stack geliştirici olarak kariyerime değer katmayı hedefliyorum.</p>
+            </section>
+
+            <section>
+                <h2 id="projects_title">PROJELERİM</h2>
+                <a href="https://github.com/edaoncel" target="_blank" style="font-size: 0.75rem; color: var(--accent-color); text-decoration: none;">
+                    <i class="fab fa-github"></i> github.com/edaoncel
+                </a>
+                <p id="project_1"><strong>GRM İnşaat - Kurumsal Çözümler Platformu</strong><br>PHP ve Laravel altyapısı ile geliştirilen bu projede MVC mimarisi kullanılarak dinamik içerik yönetimi sağlandı. Ölçeklenebilir ve güvenli bir yapı üzerine kurulan platform, kurumsal dijital varlıkların profesyonel yönetimine olanak tanımaktadır.</p>
+                <p id="project_2"><strong>E-Ticaret Yönetim Sistemi - Full-Stack Çözüm</strong><br>PHP ve MySQL entegrasyonu ile geliştirilen, stok takibi ve sipariş yönetimi içeren kapsamlı bir sistem. Tam fonksiyonel CRUD operasyonları ile veritabanı yönetimi ve asenkron veri işlemleri (AJAX) üzerinden kesintisiz bir kullanıcı deneyimi (UX) sunulmuştur.</p>
+                <p id="project_3"><strong>Kişisel Portfolyo - UX/UI Odaklı Marka Kimliği</strong><br>HTML5, CSS3 ve modern frontend standartları kullanılarak geliştirilmiştir. Mobil uyumlu (responsive) tasarımıyla, teknik yetkinliklerin ve profesyonel başarıların kurumsal bir ciddiyetle sergilendiği bir marka kimliği platformudur.</p>
+            </section>
+
+            <section>
+                <h2 id="experience_title">İŞ DENEYİMİ</h2>
+                <p id="exp_company"><strong>Atık Nakit</strong> | Backend Geliştirici | 01.06.2023 - 22.07.2024</p>
+                <ul id="exp_list">
+                    <li id="exp_item1">PHP (MVC) yapısı ile web uygulamaları geliştirdim.</li>
+                    <li id="exp_item2">SQL ile şema tasarımı, veri yönetimi ve CRUD operasyonlarını optimize ettim.</li>
+                    <li id="exp_item3">CSS3 ve JavaScript ile modern kullanıcı arayüzleri oluşturdum.</li>
+                    <li id="exp_item4">Ultralytics Hub üzerinden görüntü işleme modelleri üzerinde çalıştım.</li>
+                    <li id="exp_item5">Veri setleri hazırlayarak yapay zeka modellerini eğittim.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 id="skills_title">TEKNİK YETKİNLİKLER</h2>
+                <p id="skill_1"><strong>Backend & Full Stack:</strong> PHP, Laravel, Veritabanı Entegrasyonu, MySQL, CRUD Operasyonları.</p>
+                <p id="skill_2"><strong>Frontend & Arayüz:</strong> JavaScript, AJAX/Fetch, HTML5, CSS3.</p>
+                <p id="skill_3"><strong>AI & Görüntü İşleme:</strong> YOLO, Ultralytics Hub, Google Colab ile Eğitim, Veri Seti Hazırlama.</p>
+                <p id="skill_4"><strong>Araçlar:</strong> Git & GitHub, Docker Temelleri.</p>
+                <p id="skill_5"><strong>Temel Bilgi:</strong> C#, Java, Python</p>
+            </section>
         </div>
 
-        <div class="theme-wrapper">
-            <button onclick="toggleDarkMode()" class="theme-btn">
-                <i id="theme-icon" class="fas fa-moon"></i>
-            </button>
-        </div>
-
-        <header class="cv-header">
-            <h1 class="cv-name">EDA ÖNCEL</h1>
-            <h3 class="cv-title">Yönetim Bilişim Sistemleri</h3>
-        </header>
-
-        <div class="cv-main-content">
-            <div class="cv-mobile-photo-section">
-                <img src="img/1.png" class="profile-photo-mobile" alt="eda oncel">
+        <div class="side-content">
+            <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 30px;">
+                <img src="img/1.png" alt="Eda Öncel" style="width: 130px; height: 130px; border-radius: 50%; margin-bottom: 10px; object-fit: cover;">
+                <p>+90 543 271 88 69<br>edaoncel15@gmail.com
             </div>
+            <section>
+                <h2 id="education_title">EĞİTİM</h2>
+                <p id="edu_uni"><strong>Mehmet Akif Ersoy Üniversitesi</strong><br>Yönetim Bilişim Sistemleri <br>( GPA: 3.37 / 4.00 | 2020-2024)</p>
+                <p id="edu_form"><strong>Pedagojik Formasyon</strong><br>Eğitim Fakültesi (2023-2024)</p>
+                <p id="edu_lang"><strong>İngilizce:</strong> A2</p>
+            </section>
 
-            <main class="cv-content">
-                <section class="about-me">
-                    <h2 class="lang-about-title">HAKKIMDA</h2>
-                    <p class="lang-about-text">Yönetim Bilişim Sistemleri mezunu olarak, backend geliştirme ve veri yönetimi süreçlerine odaklanıyorum. PHP ve SQL tabanlı MVC mimarisiyle web projeleri geliştirme, Fetch API ile veri yönetimi ve YOLO modelleriyle görüntü işleme konularında somut deneyim kazandım. Analitik bakış açımı teknik becerilerimle birleştirerek, Full-stack süreçlerde ve inovatif projelerde değer üretmeyi hedefliyorum.</p>
-                </section>
-
-                <section class="education">
-                    <h2 class="lang-edu-title">EĞİTİM</h2>
-                    <h3 class="item-title">Mehmet Akif Ersoy Üniversitesi</h3>
-                    <div class="item">
-                        <p class="dates">2020 - 2024</p>
-                        <p><span class="lang-edu-dept">Yönetim Bilişim Sistemleri - Zeliha Tolunay Uygulamalı Teknoloji ve İşletmecilik Yüksekokulu</span> - <b>GPA: 3.37 / 4.00</b></p>
-                    </div>
-                    <div class="item">
-                        <p class="dates">2023 - 2024</p>
-                        <p class="lang-edu-pedagogy">Pedagojik Formasyon Eğitimi (Eğitim Fakültesi)</p>
-                    </div>
-                </section>
-
-                <section class="experience">
-                    <h2 class="lang-exp-title">İŞ DENEYİMİ</h2>
-                    <h3 class="item-title">Atık Nakit</h3>
-                    <div class="item">
-                        <p class="dates">01.06.2023 - 22.07.2024</p>
-                        <ul class="lang-exp-list">
-                            <li id="exp-1"><b>Backend:</b> PHP (MVC) yapısı ile web uygulamaları geliştirdim.</li>
-                            <li id="exp-2"><b>Veri Tabanı:</b> SQL ile şema tasarımı, veri yönetimi ve CRUD operasyonlarını optimize ettim.</li>
-                            <li id="exp-3"><b>Frontend:</b> CSS3 ve JavaScript ile responsive, modern kullanıcı arayüzleri oluşturdum.</li>
-                            <li id="exp-4"><b>Yapay Zeka:</b> Ultralytics Hub üzerinden görüntü işleme modelleri üzerinde çalıştım.</li>
-                            <li id="exp-5"><b>Model Eğitimi:</b> Veri setleri hazırlayarak yapay zeka modellerini eğittim ve başarı oranlarını artırdım.</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <section class="projects">
-                    <h2 class="lang-projects-title">PROJELERİM</h2>
-
-                    <div class="project-item">
-                        <a href="javascript:void(0)" onclick="openModal('modal3')" class="project-link">
-                            <h3 class="lang-proj3-title">GRM İnşaat Kurumsal Web Sitesi</h3>
-                        </a>
-                        <p class="lang-proj3-short">PHP ve Laravel altyapısı ile geliştirilmiş, ön yüz ve dinamik veri yönetimi sağlayan yönetim paneline sahip kurumsal inşaat platformu.</p>
-                    </div>
-
-                    <div class="project-item">
-                        <a href="javascript:void(0)" onclick="openModal('modal1')" class="project-link">
-                            <h3 class="lang-proj1-title">Kişisel Portfolyo Web Sitesi</h3>
-                        </a>
-                        <p class="lang-proj1-short">HTML5, CSS3 ve JavaScript kullanarak geliştirdiğim, kullanıcı deneyimi (UX) odaklı ve responsive uyumlu kişisel marka platformu.</p>
-                    </div>
-
-                    <div class="project-item">
-                        <a href="javascript:void(0)" onclick="openModal('modal2')" class="project-link">
-                            <h3 class="lang-proj2-title">E-Ticaret Yönetim Web Sitesi</h3>
-                        </a>
-                        <p class="lang-proj2-short">PHP ve SQL tabanlı, ürün ve stok yönetimi sağlayan, tam fonksiyonel CRUD operasyonlarını içeren, güvenli giriş sistemine sahip full-stack yönetim arayüzü.</p>
-                    </div>
-                    <br>
-
-
-                    <div id="modal3" class="modal">
-                        <div class="modal-content">
-                            <span class="close" onclick="closeModal('modal3')">&times;</span>
-                            <h3 class="lang-proj3-modal-title">GRM İnşaat Kurumsal Web Sitesi</h3>
-                            <p class="lang-proj3-desc">İnşaat firmasının kurumsal ihtiyaçlarına yönelik olarak PHP ve Laravel altyapısıyla geliştirilmiş kapsamlı bir kurumsal web projesidir. Proje, firmanın dijital varlığını güçlendiren modern bir ön yüz tasarımına ve şirket verilerinin, projelerin ve kurumsal içeriklerin kolayca güncellenebileceği dinamik, kullanıcı dostu bir yönetim paneline sahiptir. Güçlü ve güvenli altyapısıyla kurumsal kimliği en iyi şekilde yansıtan, ölçeklenebilir ve sürdürülebilir bir dijital çözüm sunulmuştur.</p>
-                            <div class="video">
-                                <video width="100%" height="auto" poster="img/kapak.png" autoplay muted loop playsinline>
-                                    <source src="img/proje-3.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <a href="https://github.com/edaoncel/grm_insaat" target="_blank" class="github-btn lang-github-text">
-                                <i class="fa-brands fa-github"></i> GitHub'da İncele
-                            </a>
-                        </div>
-                    </div>
-                    <div id="modal1" class="modal">
-                        <div class="modal-content">
-                            <span class="close" onclick="closeModal('modal1')">&times;</span>
-                            <h3 class="lang-proj1-modal-title">Kişisel Portfolyo Web Sitesi</h3>
-                            <p class="lang-proj1-desc">Modern web teknolojileri (HTML5, CSS3, JavaScript) kullanarak geliştirdiğim bu projede, kişisel markamı ve teknik yetkinliklerimi sergileyen kullanıcı odaklı bir platform oluşturdum. Responsive (mobil uyumlu) tasarım ilkelerini temel alarak, projelerim, eğitim geçmişim ve iletişim bilgilerim gibi dinamik bölümleri optimize edilmiş bir kullanıcı deneyimi (UX) ile sundum. Kod yapısında temizlik ve sürdürülebilirlik prensiplerini uygulayarak, hem görsel hem de performans açısından yüksek standartlarda bir web arayüzü ortaya koydum.</p>
-                            <div class="video">
-                                <video width="100%" height="auto" poster="img/kapak.png" autoplay muted loop playsinline>
-                                    <source src="img/proje-1.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <a href="https://github.com/edaoncel/portfolyo_web_sitesi" target="_blank" class="github-btn lang-github-text">
-                                <i class="fa-brands fa-github"></i> GitHub'da İncele
-                            </a>
-                        </div>
-                    </div>
-
-                    <div id="modal2" class="modal">
-                        <div class="modal-content">
-                            <span class="close" onclick="closeModal('modal2')">&times;</span>
-                            <h3 class="lang-proj2-modal-title">E-Ticaret Yönetim Web Sitesi</h3>
-                            <p class="lang-proj2-desc">Veri yönetimi ve iş mantığı süreçlerini kapsayan, full-stack yaklaşımla geliştirilmiş bir e-ticaret uygulamasıdır. Proje kapsamında, SQL tabanlı ilişkisel veritabanı mimarisi üzerinde ürün, kategori ve stok yönetimini sağlayan kapsamlı bir Yönetici Paneli geliştirilerek tam fonksiyonel CRUD işlemleri hayata geçirilmiştir. Kullanıcı ve yönetici ayrımını sağlayan güvenli giriş sisteminin yanı sıra; ön yüz tarafında ürün listeleme, dinamik arama ve sepet yönetimi gibi e-ticaretin temel süreçlerini yöneten modüllerin geliştirme çalışmaları devam etmektedir. Bu proje ile karmaşık veri yapılarını yönetme ve backend-frontend entegrasyonu konularında yetkinliklerimi pekiştirdim.</p>
-                            <div class="video">
-                                <video width="100%" height="auto" poster="img/kapak.png" autoplay muted loop playsinline>
-                                    <source src="img/proje-2.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                            <a href="https://github.com/edaoncel/zarif_dugumler" target="_blank" class="github-btn lang-github-text">
-                                <i class="fa-brands fa-github"></i> GitHub'da İncele
-                            </a>
-                        </div>
-                    </div>
-                </section>
-                <!-- <div class="html2pdf__page-break"></div> pdf indirdiğimizde sayfanın nereden bölünüp diğer sayfaya geçeceğini ayrlıyoruz. -->
-            </main>
-
-            <aside class="cv-sidebar">
-                <img src="img/1.png" class="profile-photo-desktop" alt="profile photo">
-                
-                <section class="contact-info-cv">
-                    <h2 class="lang-contact-title">İLETİŞİM</h2>
-                    <ul>
-                        <li><i class="fas fa-phone"></i> <span>+90 5432718869</span></li>
-                        <li><i class="fas fa-envelope"></i> <span>edaoncel15@gmail.com</span></li>
-                        <li><i class="fas fa-map-marker-alt"></i> <span class="address-text">Çavdır / Burdur</span></li>
-                    </ul>
-                </section>
-
-                
-                <section class="skills">
-                    <h2 class="lang-skills-title">TEKNİK YETKİNLİKLER</h2>
-                    <ul>
-                        <li class="lang-skills-full"><span class="skill-name"><b>Backend & Frontend: </b> PHP (Native & Laravel), JavaScript, HTML5, CSS3 </span></li>
-                        <li class="lang-skills-db"><span class="skill-name"><b>Veri Tabanı: </b>  (MySQL / phpMyAdmin)</span></li>
-                        <li class="lang-skills-basic"><span class="skill-name"><b>Temel Bilgi Düzeyi: </b> C#, Java, C </span></li>
-                        <li class="lang-skills-ai"><span class="skill-name"><b>Yapay Zeka: </b> Python (YOLO, Ultralytics, Google Colab üzerinde model eğitimi)</span></li>
-                    </ul>
-                </section>
-
-                <section class="certificates">
-                    <h2 class="lang-cert-title">SERTİFİKALAR</h2>
-                    <div class="item">
-                        <p><b>Turkcell:</b> <a href="file/turkcell-sertifika.jpg" target="_blank" class="cert-link">Global Kariyer Zirvesi</a></p>
-                        <p><b>Udemy:</b> 
-                            <a href="file/udemy-1.pdf" target="_blank" class="cert-link">Git/Github</a>, 
-                            <a href="file/udemy-2.pdf" target="_blank" class="cert-link">Flutter</a>, 
-                            Node JS, Web Developer
-                        </p>
-                    </div>
-                </section>
-
-                <section class="languages">
-                    <h2 class="lang-langs-title">DİLLER</h2>
-                    <ul>
-                        <li class="lang-en-level">İngilizce: A2</li>
-                    </ul>
-                </section>
-                
-                <section class="references">
-                    <h2 class="lang_ref_title">REFERANSLAR</h2>
-                    
-                    <div class="ref-item">
-                        <h4 class="ref-name">Furkan Esad Köroğlu</h4>
-                        <p class="ref_title_1">CEO & Kurucu</p>
-                        <ul class="ref-contact">
-                            <li><i class="fas fa-phone"></i> <span>0541 440 49 96</span></li>
-                            <li><i class="fas fa-envelope"></i> <span>furkanesadkoroglu@atiknakit.com</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="ref-item">
-                        <h4 class="ref-name">Enes Özüdoğru</h4>
-                        <p class="ref_title_2">Yazılım Ekip Lideri</p>
-                        <ul class="ref-contact">
-                            <li><i class="fas fa-phone"></i> <span>0534 084 86 51</span></li>
-                            <li><i class="fas fa-envelope"></i> <span>enesozudogru@atiknakit.com</span></li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- <section class="accounts qr-section-wrapper">
-                    <h2 class="lang-accounts-title">HESAPLARIM</h2>
-                    <div class="qr-group">
-                        <div class="single-qr-container">
-                            <img src="img/qr-code.png" alt="Eda Öncel Dijital Kartvizit">
-                            <p class="qr-hint">Bağlantı kurmak için okutun.</p>
-                        </div>
-                        <div class="single-qr-container">
-                            <img src="img/cv&onyazi.png" alt="Eda Öncel">
-                            <p class="lang-view-cv-text">Ön yazımın tamamını görün.</p>
-                        </div>
-                    </div>
-                </section> -->
-                <div class="download-section" style="text-align: center; margin-top: 20px;">
-                    <button onclick="downloadCV()" 
-                        style="
-                            background: #e0e0e0;
-                            border: none; 
-                            width: 10px;
-                            height: 10px; 
-                            border-radius: 50%; 
-                            cursor: pointer; 
-                            position: fixed; 
-                            bottom: 5px; 
-                            right: 5px; 
-                            z-index: 9999;
-                            opacity: 0.3;
-                        ">
-                    </button>
-                    <!-- <button onclick="downloadCV()" class="lang-download-btn">
-                        <i class="fas fa-file-pdf"></i> PDF İndir</span>
-                    </button> -->
-                </div>
-            </aside>
+            <section>
+                <h2 id="certificates_title">SERTİFİKALAR</h2>
+                <p id="cert_1"><b>Turkcell:</b> <a href="file/turkcell-sertifika.jpg" target="_blank" class="cert-link">Global Kariyer Zirvesi</a></p>
+                <p id="cert_2"><b>Udemy:</b> <a href="file/udemy-1.pdf" target="_blank" class="cert-link">Git/Github</a>, <a href="file/udemy-2.pdf" target="_blank" class="cert-link">Flutter</a>, Node JS, Web Developer</p>
+            </section>
+            
+            <section>
+                <h2 id="references_title">REFERANSLAR</h2>
+                <p id="ref_1"><strong>Furkan Esad Köroğlu</strong><br>CEO | 0541 440 49 96</p>
+                <p id="ref_2"><strong>Enes Özüdoğru</strong><br>Yazılım Lideri | 0534 084 86 51</p>
+            </section>
         </div>
     </div>
-    <div class="html2pdf__page-break"></div> <!-- pdf indirdiğimizde sayfanın nereden bölünüp diğer sayfaya geçeceğini ayrlıyoruz. -->
+</div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script src="cv.js"></script>
+<div class="controls">
+    <button id="en-btn" onclick="changeLanguage('en')" class="action-btn">EN</button>
+    <button id="tr-btn" onclick="changeLanguage('tr')" class="action-btn" style="display: none;">TR</button>
+    <button onclick="downloadCV()" class="pdf-btn"><i class="fas fa-file-pdf"></i></button>
+</div>
+
+<script src="cv.js"></script>
 </body>
 </html>
-
-
