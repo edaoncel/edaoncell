@@ -1,94 +1,213 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eda Öncel - CV</title>
-    <link rel="stylesheet" href="cv.css"> 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="img/1.png" rel="icon" type="image/x-icon">
+    <link rel="icon" href="img/1.jpg" type="image/png">
+    <title>EDA ÖNCEL - PROJECT</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+
+    
 </head>
 <body>
 
-<div class="cv-wrapper">
-    <header class="cv-header">
-        <h1 class="cv-name">EDA ÖNCEL</h1>
-        <h3 id="job_title" class="cv-title">Full Stack Web Developer</h3>
-    </header>
+    <div id="three-container"></div>
+    <div class="layer-blur"></div>
+    <div class="noise-overlay"></div>
+    <div class="grain-overlay"></div>
 
-    <div class="content-container">
-        <div class="main-content">
-            <section>
-                <h2 id="about_title">HAKKIMDA</h2>
-                <p id="about_text">Yönetim Bilişim Sistemleri (YBS) lisans mezunuyum. Yazılım geliştirme sürecine analitik bir bakış açısıyla yaklaşıyor; backend mimarileri, veri tabanı optimizasyonu ve modern web teknolojileri üzerinde uzmanlaşıyorum. <br><br> PHP ve Laravel ekosisteminde MVC mimarisi ile ölçeklenebilir projeler geliştirmekte, Fetch API ve asenkron veri yönetimi ile dinamik kullanıcı deneyimleri kurgulamaktayım. Yazılım dünyasındaki güncel eğilimleri yakından takip ediyor; özellikle YOLO ve Ultralytics Hub kullanarak geliştirdiğim görüntü işleme modelleriyle yapay zekayı pratik çözümlere entegre ediyorum. Öğrenmeye tutkulu, çözüm odaklı ve hem backend hem de frontend süreçlerinde bütüncül sorumluluk alabilen bir Full Stack geliştirici olarak kariyerime değer katmayı hedefliyorum.</p>
-            </section>
-
-            <section>
-                <h2 id="projects_title">PROJELERİM</h2>
-                <a href="https://github.com/edaoncel" target="_blank" style="font-size: 0.75rem; color: var(--accent-color); text-decoration: none;">
-                    <i class="fab fa-github"></i> github.com/edaoncel
-                </a>
-                <p id="project_1"><strong>GRM İnşaat - Kurumsal Çözümler Platformu</strong><br>PHP ve Laravel altyapısı ile geliştirilen bu projede MVC mimarisi kullanılarak dinamik içerik yönetimi sağlandı. Ölçeklenebilir ve güvenli bir yapı üzerine kurulan platform, kurumsal dijital varlıkların profesyonel yönetimine olanak tanımaktadır.</p>
-                <p id="project_2"><strong>E-Ticaret Yönetim Sistemi - Full-Stack Çözüm</strong><br>PHP ve MySQL entegrasyonu ile geliştirilen, stok takibi ve sipariş yönetimi içeren kapsamlı bir sistem. Tam fonksiyonel CRUD operasyonları ile veritabanı yönetimi ve asenkron veri işlemleri (AJAX) üzerinden kesintisiz bir kullanıcı deneyimi (UX) sunulmuştur.</p>
-                <p id="project_3"><strong>Kişisel Portfolyo - UX/UI Odaklı Marka Kimliği</strong><br>HTML5, CSS3 ve modern frontend standartları kullanılarak geliştirilmiştir. Mobil uyumlu (responsive) tasarımıyla, teknik yetkinliklerin ve profesyonel başarıların kurumsal bir ciddiyetle sergilendiği bir marka kimliği platformudur.</p>
-            </section>
-
-            <section>
-                <h2 id="experience_title">İŞ DENEYİMİ</h2>
-                <p id="exp_company"><strong>Atık Nakit</strong> | Backend Geliştirici | 01.06.2023 - 22.07.2024</p>
-                <ul id="exp_list">
-                    <li id="exp_item1">PHP (MVC) yapısı ile web uygulamaları geliştirdim.</li>
-                    <li id="exp_item2">SQL ile şema tasarımı, veri yönetimi ve CRUD operasyonlarını optimize ettim.</li>
-                    <li id="exp_item3">CSS3 ve JavaScript ile modern kullanıcı arayüzleri oluşturdum.</li>
-                    <li id="exp_item4">Ultralytics Hub üzerinden görüntü işleme modelleri üzerinde çalıştım.</li>
-                    <li id="exp_item5">Veri setleri hazırlayarak yapay zeka modellerini eğittim.</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2 id="skills_title">TEKNİK YETKİNLİKLER</h2>
-                <p id="skill_1"><strong>Backend & Full Stack:</strong> PHP, Laravel, Veritabanı Entegrasyonu, MySQL, CRUD Operasyonları.</p>
-                <p id="skill_2"><strong>Frontend & Arayüz:</strong> JavaScript, AJAX/Fetch, HTML5, CSS3.</p>
-                <p id="skill_3"><strong>AI & Görüntü İşleme:</strong> YOLO, Ultralytics Hub, Google Colab ile Eğitim, Veri Seti Hazırlama.</p>
-                <p id="skill_4"><strong>Araçlar:</strong> Git & GitHub, Docker Temelleri.</p>
-                <p id="skill_5"><strong>Temel Bilgi:</strong> C#, Java, Python</p>
-            </section>
+ <div id="project_1" class="modal-overlay">
+    <div class="modal-content">
+      
+        <button class="close-modal">&times;</button>
+        <div class="video-wrapper">
+            <video id="projectVideo" controls autoplay loop muted playsinline>
+                <source src="img/proje-1.mp4" type="video/mp4">
+            </video>
         </div>
 
-        <div class="side-content">
-            <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 30px;">
-                <img src="img/1.png" alt="Eda Öncel" style="width: 130px; height: 130px; border-radius: 50%; margin-bottom: 10px; object-fit: cover;">
-                <p>+90 543 271 88 69<br>edaoncel15@gmail.com
+        <div class="modal-text">
+          
+            <h2 id="modalTitle">GRM İNŞAAT</h2>
+            <div id="modalDesc">
+                  <div id="modalDesc">
+                      <ul>
+                          <li>Yazılım geliştirme sürecini probleme yönelik en verimli, ölçeklenebilir ve sürdürülebilir çözümleri tasarlama süreci olarak ele alıyorum.</li>
+                          <li><strong>Full-Stack:</strong> Laravel (PHP) ile güvenli API iletişimi ve modüler altyapı.</li>
+                          <li><strong>Arayüz Geliştirme:</strong> Native JS ile yüksek performanslı, özel etkileşim kütüphaneleri.</li>
+                          <li><strong>Performans:</strong> SQL sorgu optimizasyonu, asenkron işlemler ve etkili asset yönetimi.</li>
+                          <li><strong>Veri Mimarisi:</strong> Tutarlılığı esas alan kurumsal ölçekte ilişkisel veritabanı tasarımları.</li>
+                          <li><strong>Standartlar:</strong> Güvenlik protokolleri ve versiyon kontrol sistemleri (Git) hakimiyeti.</li>
+                        </ul>
+                  </div>
+            </div><br>
+            <div class="tech-stack-container">
+                <div class="tech-tags" id="modalTagsContainer">
+                    <span class="tag-btn">Laravel</span>
+                    <span class="tag-btn">PHP</span>
+                    <span class="tag-btn">MySQL</span>
+                    <span class="tag-btn">CSS3</span>
+                    <span class="tag-btn">JS</span>
+                </div>
             </div>
-            <section>
-                <h2 id="education_title">EĞİTİM</h2>
-                <p id="edu_uni"><strong>Mehmet Akif Ersoy Üniversitesi</strong><br>Yönetim Bilişim Sistemleri <br>( GPA: 3.37 / 4.00 | 2020-2024)</p>
-                <p id="edu_form"><strong>Pedagojik Formasyon</strong><br>Eğitim Fakültesi (2023-2024)</p>
-                <p id="edu_lang"><strong>İngilizce:</strong> A2</p>
-            </section>
-
-            <section>
-                <h2 id="certificates_title">SERTİFİKALAR</h2>
-                <p id="cert_1"><b>Turkcell:</b> <a href="file/turkcell-sertifika.jpg" target="_blank" class="cert-link">Global Kariyer Zirvesi</a></p>
-                <p id="cert_2"><b>Udemy:</b> <a href="file/udemy-1.pdf" target="_blank" class="cert-link">Git/Github</a>, <a href="file/udemy-2.pdf" target="_blank" class="cert-link">Flutter</a>, Node JS, Web Developer</p>
-            </section>
-            
-            <section>
-                <h2 id="references_title">REFERANSLAR</h2>
-                <p id="ref_1"><strong>Furkan Esad Köroğlu</strong><br>CEO | 0541 440 49 96</p>
-                <p id="ref_2"><strong>Enes Özüdoğru</strong><br>Yazılım Lideri | 0534 084 86 51</p>
-            </section>
         </div>
     </div>
 </div>
 
-<div class="controls">
-    <button id="en-btn" onclick="changeLanguage('en')" class="action-btn">EN</button>
-    <button id="tr-btn" onclick="changeLanguage('tr')" class="action-btn" style="display: none;">TR</button>
-    <button onclick="downloadCV()" class="pdf-btn"><i class="fas fa-file-pdf"></i></button>
+<div id="project_2" class="modal-overlay">
+    <div class="modal-content">
+      
+        <button class="close-modal">&times;</button>
+        <div class="video-wrapper">
+            <video id="projectVideo" controls autoplay loop muted playsinline>
+                <source src="img/proje-2.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="modal-text">
+          
+            <h2 id="modalTitle">PORTFOLYO</h2>
+            <div id="modalDesc">
+                <ul>
+                    <li>Modern, hızlı ve her cihazda kusursuz çalışan, mobil uyumlu (responsive) bir arayüz tasarladım.</li>
+                    <li>Kullanıcı etkileşimlerini güçlendirmek için JavaScript ile dinamik DOM manipülasyonları gerçekleştirdim.</li>
+                    <li>CSS3'ün sunduğu güçlü özellikleri (Flexbox/Grid ve animasyonlar) kullanarak akıcı bir görsel dil oluşturdum.</li>
+                    <li>Proje verilerini yapılandırmak için JSON formatını kullanarak sürdürülebilir ve esnek bir veri akışı sağladım.</li>
+                </ul>
+            </div>
+            <div class="tech-stack-container">
+                <div class="tech-tags" id="modalTagsContainer">
+                    <span class="tag-btn">HTML</span>
+                    <span class="tag-btn">CSS3</span>
+                    <span class="tag-btn">JS</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<script src="cv.js"></script>
+<div id="project_3" class="modal-overlay">
+    <div class="modal-content">
+      
+        <button class="close-modal">&times;</button>
+        <div class="video-wrapper">
+            <video id="projectVideo" controls autoplay loop muted playsinline>
+                <source src="img/proje-3.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="modal-text">
+          
+            <h2 id="modalTitle">ZARİF DÜĞÜMLER</h2>
+            <div id="modalDesc">
+                  <div id="modalDesc">
+                      <ul>
+                          <li>Zarif Düğümler; kullanıcı deneyimini merkeze alan, bir altyapıyla birleştiren kapsamlı bir e-ticaret çözümüdür.</li>
+                          <li><strong>Backend Mimarisi:</strong> Native PHP ile geliştirilmiş, güvenli ve ölçeklenebilir sunucu tarafı mantığı.</li>
+                          <li><strong>Veri Yönetimi:</strong> PDO ile güvenli SQL sorguları (Prepared Statements) kullanarak veritabanı etkileşimi ve veri tutarlılığı.</li>
+                          <li><strong>Asenkron İletişim:</strong> Sayfa yenilenmesine gerek kalmadan hızlı veri transferi sağlayan AJAX entegrasyonu.</li>
+                          <li><strong>Dinamik Arayüz:</strong> Native JS ve CSS3 ile geliştirilmiş, akıcı ve etkileşimli kullanıcı deneyimi.</li>
+                          <li><strong>Veri Yapısı:</strong> Sistemler arası esnek veri aktarımı için JSON formatlı haberleşme.</li>
+                          <li><strong>Yönetim Paneli:</strong> Ürün, sipariş ve içerik yönetimini tek merkezden sağlayan, tam kontrol odaklı özelleştirilmiş panel.</li>
+                      </ul>
+                  </div>
+            </div><br>
+            <div class="tech-stack-container">
+                <div class="tech-tags" id="modalTagsContainer">
+                    <span class="tag-btn">PHP</span>
+                    <span class="tag-btn">MySQL</span>
+                    <span class="tag-btn">CSS3</span>
+                    <span class="tag-btn">JS</span>
+                    <span class="tag-btn">JSON</span>
+                    <span class="tag-btn">AJAX</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="ui-layer">
+        <div class="hero">
+          <div class="hero-actions">
+                  <a target=_blank href="https://edaoncel.github.io/eda_cv/" class="btn-ghost">CV'ye Git</a>
+                  <a target=_blank href="https://edaoncel.github.io/on_yazi/" class="btn-ghost">Ön Yazıya Git</a>
+              </div>
+            <section class="hero-section">
+              <div class="slider-wrapper" id="slider">
+                  <!-- proje 1 -->
+                  <div class="slide">
+                      <h1 class="hero-title">GRM İNŞAAT</h1>
+                      <p class="hero-body">Laravel altyapısıyla inşaat sektörü için hazırladığım kapsamlı bir içerik yönetim sistemi. Dinamik veri yönetimi, optimize edilmiş CRUD süreçleri ve gelişmiş güvenlik loglama mekanizmaları ile donatılmış; responsive ve kullanıcı dostu bir yönetim arayüzüne sahip uçtan uca bir yazılım çözümüdür.</p>
+                      <div class="hero-actions">
+                          <a class="btn-main" data-idx="project_1">Detaylı İncele <span class="btn-arrow">→</span></a>
+                          <a href="https://github.com/edaoncel/grm_insaat" class="btn-ghost">GitHub Kodlarına Git</a>
+                      </div>
+                  </div>
+
+                  <!-- proje 2 -->
+                   <div class="slide">
+                      <h1 class="hero-title">MODERN PORTFOLYO</h1>
+                      <p class="hero-body">Dijital dünyada iz bırakma tutkusuyla yola çıkan bir yazılım geliştirici olarak, kullanıcı odaklı ve estetik arayüzler tasarlıyorum. HTML, CSS ve JavaScript teknolojilerini kullanarak karmaşık fikirleri işlevsel ve etkileyici projelere dönüştürüyorum. Bu platformda, üzerinde çalıştığım projelerimi ve teknik yetkinliklerimi sergileyerek profesyonel yolculuğumu sizlerle paylaşıyorum. Sürekli öğrenme ve gelişimi merkezine alan bakış açımla, dijital projelerinize değer katmak için sabırsızlanıyorum</p>
+                      <div class="hero-actions">
+                          <a class="btn-main" data-idx="project_2">Detaylı İncele <span class="btn-arrow">→</span></a>
+                          <a href="https://github.com/edaoncel/portfolyo_web_sitesi" class="btn-ghost">GitHub Kodlarına Git</a>
+                      </div>
+                  </div>
+                  
+                  <!-- proje 3 -->
+                  <div class="slide">
+                      <h1 class="hero-title">ZARİF DÜĞÜMLER</h1>
+                      <p class="hero-body">Zarif Düğümler, estetik ve işlevselliği birleştiren, kullanıcı dostu bir e-ticaret platformudur. Müşteriler; favori, sepet ve kolay sipariş yönetimiyle ayrıcalıklı bir alışveriş deneyimi yaşar. Kapsamlı yönetici paneli sayesinde ürün, içerik ve kullanıcı yönetimi tek merkezden zahmetsizce gerçekleştirilir.</p>
+                      <div class="hero-actions">
+                          <a class="btn-main" data-idx="project_3">Detaylı İncele <span class="btn-arrow">→</span></a>
+                          <a href="https://github.com/edaoncel/zarif_dugumler" class="btn-ghost">GitHub Kodlarına Git</a>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="slider-nav">
+                    <button class="nav-arrow prev">←</button>
+                    <div class="dots-wrapper"></div>
+                    <button class="nav-arrow next">→</button>
+                </div>
+            </section>
+        </div>
+        
+
+        <div class="morph-info">
+            <div class="morph-name" id="morph-name">Dodeca</div>
+            <div class="morph-counter" id="morph-counter">01 / 04</div>
+            <div class="morph-progress-bar"><div class="morph-progress-fill" id="morph-progress"></div></div>
+        </div>
+
+        <div class="footer">
+
+            <div class="footer-right">
+                <div class="dot-nav active" data-idx="0"></div>
+                <div class="dot-nav" data-idx="1"></div>
+                <div class="dot-nav" data-idx="2"></div>
+                <div class="dot-nav" data-idx="3"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module" src="index.js">
+    </script>
 </body>
 </html>
+
