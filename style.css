@@ -546,50 +546,55 @@
 
 
 
-    @media (max-width: 768px) {
-             .hero-title {
-                    font-size: 4rem !important;
-                    margin-bottom: 50px !important;
-                }
+* {
+    box-sizing: border-box; 
+    max-width: 100%;        
+}
 
-                .hero-body {
-                    margin-bottom: 0%;
-                    font-size: 1.5rem !important;
-                }
+body {
+    overflow-x: hidden;   
+    margin: 0;
+    padding: 0;
+}
 
-                .hero-actions {
-                    flex-direction: row !important; 
-                    gap: 10px;
-                    justify-content: center;
-                    width: 100%;
-                }
+@media (max-width: 480px) {
+    .cv-wrapper {
+        padding: 15px !important;
+        width: 95% !important;
+        margin: 10px auto !important;
+    }
+    .cv-name { font-size: 1.8rem !important; }
+    .cv-title { font-size: 1rem !important; }
+    
+    .content-container {
+        display: block !important;
+    }
+    
+    .controls {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+}
 
-                .btn-main, .btn-ghost {
-                    padding: 10px 15px !important;
-                    font-size: 0.85rem !important;
-                    white-space: nowrap; 
-                }
+@media (min-width: 481px) and (max-width: 768px) {
+    .cv-wrapper {
+        width: 90% !important;
+        padding: 30px !important;
+    }
+}
 
-            .slide {
-                background: rgba(0, 0, 0, 0.5); 
-                backdrop-filter: blur(8px);   
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                border-radius: 20px;
-                margin: 0px;
-            }
+p, li, .about-text {
+    word-wrap: break-word !important; 
+    overflow-wrap: break-word !important;
+    hyphens: auto; 
+}
 
-            .ui-layer {
-                grid-template-columns: 1fr;
-            }
+img {
+    max-width: 100% !important;
+    height: auto !important; 
+}
 
-            .hero-section {
-            height: 100vh; 
-                }
-            .hero {
-                padding: 0 2rem;
-                grid-column: 1;
-            }
-            .morph-info { display: none; }
-            .nav { padding: 1.5rem 2rem; }
-            .footer { padding: 0 2rem 2rem; }
-        }
+button {
+    min-width: 60px !important;
+    padding: 10px 20px !important;
+}
