@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDA ÖNCEL | HAKKIMDA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #e0deda;
+    --text: #1c1c1c;      
+  --text-dim: #2c2c29;
+    --line: rgba(28,28,28,0.14);
+    --panel: rgba(255,255,255,0.55);
+    --accent: #b3401f;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    transition: background 0.6s ease, color 0.6s ease;
+  }
+
+  body.dark-mode {
+  --bg: #141414;
+  --text: #f0ede6;       
+  --text-dim: #a3a099;  
+  --line: rgba(255,255,255,0.12);
+  --panel: rgba(20,20,20,0.55);
+  --accent: #e07050;    
+}
+
+  #helmetCanvas { 
+  position: fixed; 
+  inset: 0; 
+  width: 100vw; 
+  height: 100vh; 
+  z-index: 0;
+  display: block; 
+  pointer-events: none; 
+}
+
+main {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 8vw 100px;
+}
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 70px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.9s ease, transform 0.9s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  .profile-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    backdrop-filter: blur(4px);
+  }
+  .profile-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .profile-frame .frame-tag {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    font-family: var(--font-display);
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #fff;
+    background: rgba(0,0,0,0.45);
+    padding: 6px 12px;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+  }
+
+  .about-text .eyebrow {
+    font-family: var(--font-display);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .about-text h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(34px, 4.5vw, 54px);
+    letter-spacing: -1px;
+    margin-bottom: 22px;
+  }
+  .about-text p {
+    font-size: 16.5px;
+    line-height: 1.85;
+    color: var(--text-dim);
+    max-width: 620px;
+  }
+  .about-text p + p { margin-top: 18px; }
+  .about-text strong { color: var(--text); font-weight: 600; }
+
+
+  @media (max-width: 860px) {
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .profile-frame { max-width: 260px; }
+    main { padding: 130px 6vw 80px; }
+        #helmetCanvas {
+        opacity: 0.5;
+        filter: blur(2px);
+    }
+    .profile-frame {
+    width: 100% !important; 
+    max-width: 100% !important; 
+    aspect-ratio: 16 / 9;
+    margin-bottom: 20px;
+  }
+  
+  .profile-frame img {
+    object-position: center;
+  }
+  }
+</style>
+</head>
+<body>
+
+    <canvas id="helmetCanvas"></canvas>
+    <div id="header-placeholder"></div>
+
+<main>
+  <div class="about-grid">
+
+    <div class="profile-frame fade-in">
+      <img src="../img/1.jpg" alt="Eda Öncel">
+      <span class="frame-tag">Eda Öncel</span>
+    </div>
+
+    <div class="about-text">
+      <div class="eyebrow fade-in">Hakkımda</div>
+      <h1 class="fade-in">Merhaba, ben Eda Öncel.</h1>
+
+      <div class="fade-in">
+        <p>
+          Yazılım geliştirme sürecinin her aşamasına dokunmayı seven bir
+          <strong>Full Stack Developer</strong>'ım. Web teknolojileri üzerinde
+          çalışıyor; kullanıcı deneyimini ön planda tutan, temiz ve işlevsel
+          çözümler üretmeye odaklanıyorum. Teknolojinin sürekli değişen
+          yapısını yakından takip ederek, projelerimi her geçen gün daha da
+          ileriye taşımaya çalışıyorum.
+        </p>
+        <p>
+          Yazılım geliştirme dünyasına olan merakım, <strong>MAKÜ Yönetim
+          Bilişim Sistemleri</strong> bölümünde okurken başladı. Yazılımın sadece kod yazmak değil, bir problemi
+          mantıklı adımlarla çözme sanatı olduğunu seviyorum.
+        </p>
+        <p>
+          Profesyonel yolculuğum, bir yazılım şirketinde yaptığım stajla
+          başladı ve ardından <strong>Junior Developer</strong> olarak devam
+          eden <strong>15 aylık</strong> bir deneyimle şekillendi. Bu
+          süreçte gerçek projelerin içinde yer almak, hatalardan ders
+          çıkarmak ve bir ekibin parçası olarak çözüm üretmek, mesleki
+          gelişimimin en değerli parçası oldu.
+        </p>
+        <p>
+            Projelerimde, modern web dünyasının ihtiyaçlarına cevap verebilecek ölçeklenebilir ve işlevsel bir teknoloji yığını kullanıyorum. 
+             Yazılım süreçlerimde temel olarak <strong>Laravel</strong> ve <strong>PHP</strong> ile güçlü, <strong>MySQL</strong> ile optimize edilmiş 
+             veritabanı yönetimi kurguluyorum. Sistemlerimin kurulum ve dağıtım süreçlerini <strong>Docker</strong> ile konteynerize 
+             ederek, projelerimin her ortamda tutarlı ve güvenli çalışmasını sağlıyorum.
+        </p>
+        <p>
+            Kullanıcı deneyimini (UX) bir adım öteye taşımak için <strong>HTML5, CSS3</strong> ve <strong>JavaScript</strong> ile duyarlı 
+            (responsive) arayüzler tasarlarken, <strong>Three.js</strong> kütüphanesini kullanarak dijital projelerime etkileşimli 
+            3D deneyimler dahil ediyorum. Veri etkileşimlerinde <strong>JSON</strong> ve <strong>AJAX</strong> ile dinamik süreçleri yöneterek, hem arka planda yüksek performanslı bir mantık yürütüyor hem de görsel olarak etkileyici ve modern dijital çözümler üretiyorum.
+        </p>
+      </div>
+    </div>
+
+  </div>
+  
+</main>
+<div id="footer-placeholder"></div>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module">
+  import * as THREE from 'three';
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+  import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
+
+  const canvas = document.getElementById('helmetCanvas');
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.0;
+  renderer.setClearColor(0xe0deda, 1);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+  camera.position.set(0, 0, 3);
+
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+  scene.add(ambientLight);
+  const dirLight1 = new THREE.DirectionalLight(0xffffff, 2.5);
+  dirLight1.position.set(5, 5, 5);
+  scene.add(dirLight1);
+  const dirLight2 = new THREE.DirectionalLight(0xc4a882, 1.2);
+  dirLight2.position.set(-3, 2, -2);
+  scene.add(dirLight2);
+  const dirLight3 = new THREE.DirectionalLight(0x8899bb, 0.8);
+  dirLight3.position.set(0, -3, 4);
+  scene.add(dirLight3);
+
+  // Ortam ışığı (HDRI) — kaskın gerçekçi metal/doku yansımaları için şart
+  const HDRI_LIGHT = 'https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/citrus_orchard_road_puresky_1k.hdr';
+  const HDRI_DARK = 'https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/qwantani_dusk_2_1k.hdr';
+  const hdriCache = {};
+
+  function loadHDRI(url) {
+    return new Promise((resolve) => {
+      if (hdriCache[url]) { resolve(hdriCache[url]); return; }
+      new RGBELoader().load(url, (texture) => {
+        texture.mapping = THREE.EquirectangularReflectionMapping;
+        hdriCache[url] = texture;
+        resolve(texture);
+      });
+    });
+  }
+  loadHDRI(HDRI_LIGHT).then((texture) => { scene.environment = texture; });
+  loadHDRI(HDRI_DARK);
+
+  // Kask — sayfanın sağ tarafında sabit bir noktada duruyor
+  let helmet = null;
+  const helmetGroup = new THREE.Group();
+  scene.add(helmetGroup);
+
+  const loader = new GLTFLoader();
+  loader.load('https://threejs.org/examples/models/gltf/DamagedHelmet/glTF/DamagedHelmet.gltf', (gltf) => {
+    helmet = gltf.scene;
+    helmet.scale.setScalar(0.9);
+    helmetGroup.add(helmet);
+  });
+  // Mobilde ortalamak için ekran genişliğini kontrol eden bir mantık ekleyelim
+function updateHelmetPosition() {
+  if (window.innerWidth < 860) {
+    helmetGroup.position.set(0, -0.5, -0.5); // Mobilde tam merkez
+    helmetGroup.scale.setScalar(0.7);        // Mobilde biraz küçültüyoruz
+  } else {
+    helmetGroup.position.set(1.7, -0.1, -0.5); // Masaüstünde sağda
+    helmetGroup.scale.setScalar(0.9);
+  }
+}
+
+// Sayfa yüklendiğinde ve boyut değiştiğinde çalıştır
+updateHelmetPosition();
+window.addEventListener('resize', updateHelmetPosition);
+  helmetGroup.rotation.set(0.05, 0.9, 0);
+
+  // ---- Karanlık mod ----
+  let isDark = false;
+  const BG_LIGHT = 0xe0deda;
+  const BG_DARK = 0x141414;
+
+  document.getElementById('modeToggle').addEventListener('click', async () => {
+    isDark = !isDark;
+    document.body.classList.toggle('dark-mode', isDark);
+    const hdri = await loadHDRI(isDark ? HDRI_DARK : HDRI_LIGHT);
+    scene.environment = hdri;
+    renderer.setClearColor(isDark ? BG_DARK : BG_LIGHT, 1);
+    renderer.toneMappingExposure = isDark ? 1.2 : 1.0;
+  });
+
+  // ---- Fare ile hafif parallax + sürekli yavaş dönüş ----
+  let mouseX = 0, mouseY = 0;
+  window.addEventListener('pointermove', (e) => {
+    mouseX = (e.clientX / window.innerWidth) - 0.5;
+    mouseY = (e.clientY / window.innerHeight) - 0.5;
+  });
+
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+
+  let t = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    t += 0.003;
+
+    if (helmet) {
+      helmet.rotation.y = 0.9 + Math.sin(t) * 0.25 + mouseX * 0.4;
+      helmet.rotation.x = 0.05 + mouseY * 0.15;
+      helmetGroup.position.y = -0.1 + Math.sin(t * 1.4) * 0.08;
+    }
+
+    renderer.render(scene, camera);
+  }
+  animate();
+</script>
+
+<script>
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  fadeEls.forEach(el => observer.observe(el));
+  setTimeout(() => fadeEls.forEach(el => el.classList.add('visible')), 200);
+</script>
+<script>
+  // Header Yükleme
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('nav-links');
+      const modeToggle = document.getElementById('modeToggle');
+
+      if(hamburger) {
+        hamburger.addEventListener('click', () => {
+          hamburger.classList.toggle('active');
+          navLinks.classList.toggle('open');
+        });
+      }
+
+      if(modeToggle) {
+        modeToggle.addEventListener('click', () => {
+          document.body.classList.toggle('dark-mode');
+        });
+      }
+    })
+    .catch(err => console.error('Header yüklenemedi:', err));
+
+  // Footer Yükleme (İşte eksik olan kısım burası!)
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(err => console.error('Footer yüklenemedi:', err));
+</script>
+
+</body>
+</html>

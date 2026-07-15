@@ -1,0 +1,229 @@
+<nav>
+  <div class="logo">EDA ÖNCEL</div>
+
+  <button class="mode-toggle" id="modeToggle" aria-label="Toggle dark mode">
+    <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+    <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><g stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></g></svg>
+  </button>
+
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Anasayfa</a>
+    <a href="about.html">Hakkımda</a>
+    <a href="project.html">Projelerim</a>
+    <a href="https://edaoncel.github.io/eda_cv/">CV</a>
+    <a href="https://edaoncel.github.io/on_yazi/">Ön Yazı</a>
+  </div>
+
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<style>
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #e8e8e8;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.mode-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background 0.4s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.mode-toggle:hover {
+  transform: scale(1.1);
+}
+
+.mode-toggle svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--text);
+  transition: fill 0.4s;
+}
+
+.mode-toggle .icon-moon { display: block; }
+.mode-toggle .icon-sun { display: none; }
+
+body.dark-mode .mode-toggle {
+  border-color: rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.35);
+}
+
+body.dark-mode .mode-toggle:hover {
+  background: rgba(0,0,0,0.55);
+}
+
+body.dark-mode .mode-toggle .icon-moon { display: none; }
+body.dark-mode .mode-toggle .icon-sun { display: block; }
+
+nav {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;     
+  height: 60px;   
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: var(--bg-color); 
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:visited {
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  opacity: 0.6;
+  text-decoration: none;
+}
+
+body.dark-mode .nav-links a {
+  color: white;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 200;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--text-color);
+  border-radius: 2px;
+  transition: transform 0.35s ease, opacity 0.25s ease;
+}
+
+.hamburger.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.active span:nth-child(3) { opacity: 0; transform: scaleX(0); }
+.hamburger.active span:nth-child(4) { transform: translateY(-9px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+  }
+
+  .nav-links.open {
+    max-height: 400px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 0.9rem 2rem 0.9rem 2.5rem;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    text-decoration: none;
+    color: #1a1a1a;
+  }
+
+  body.dark-mode .nav-links {
+    background: rgba(0, 0, 0, 0.75);
+  }
+
+  body.dark-mode .nav-links a {
+    color: #e8e8e8;
+    border-top-color: rgba(255,255,255,0.1);
+  }
+}
+</style>
+
+<script>
+    // Hamburger menü
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('open');
+});
+
+// Link tıklanınca menüyü kapat (mobil)
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('open');
+  });
+});
+
+// Dark mode toggle
+const modeToggle = document.getElementById('modeToggle');
+modeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode'); // 'dark' değil, 'dark-mode' olmalı
+});
+</script>

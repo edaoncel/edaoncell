@@ -1,0 +1,63 @@
+<footer class="footer">
+  <div class="footer-logo">EDA ÖNCEL</div>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/mis.code.master/">Instagram</a>
+    <a href="mailto:edaoncel15@gmail.com">Mail</a>
+    <a href="https://www.linkedin.com/in/eda-%C3%B6ncel-778647254/">LinkedIn</a>
+  </div>
+  <div class="footer-copy">© 2026 Eda Öncel. Tüm hakları saklıdır.</div>
+</footer>
+
+<style>
+  .footer {
+  padding: 60px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+body {
+  --footer-bg: rgba(224, 222, 218, 0.7);
+}
+
+body.dark-mode {
+  --bg: #141414;
+  --text: #f0ede6;
+  --text-secondary: #a3a099;
+  --footer-bg: rgba(20, 20, 20, 0.7);
+}
+
+.footer {
+  padding: 60px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: var(--footer-bg); 
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.footer .footer-logo,
+.footer .footer-copy {
+  color: var(--text) !important;
+}
+
+.footer .footer-links a {
+  color: var(--text-secondary) !important;
+}
+
+body.dark-mode .footer .footer-logo,
+body.dark-mode .footer .footer-copy {
+  color: #f0ede6 !important; 
+}
+
+body.dark-mode .footer .footer-links a {
+  color: #a3a099 !important;
+}
+</style>

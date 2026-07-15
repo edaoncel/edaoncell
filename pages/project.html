@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="../css/style.css">
+  <title>EDA ÖNCEL | PROJELER</title>
+</head>
+<body>
+<style>
+  :root {
+    --bg: #e0deda;
+    --text: #1c1c1c;
+    --text-dim: #5a5a55;
+    --line: rgba(28,28,28,0.14);
+    --panel: rgba(255,255,255,0.55);
+    --grm-accent: #b3401f;
+    --zarif-accent: #b3401f;
+    --portfolyo-accent: #b3401f;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-elegant: 'Cormorant Garamond', serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    transition: background 0.6s ease, color 0.6s ease;
+  }
+  body.dark-mode {
+    --bg: #141414;
+    --text: #f0ede6;
+    --text-dim: #a3a099;
+    --line: rgba(255,255,255,0.12);
+    --panel: rgba(20,20,20,0.55);
+  }
+  body[data-mood="grm"] { --mood-accent: var(--grm-accent); }
+  body[data-mood="zarif"] { --mood-accent: var(--zarif-accent); }
+  body[data-mood="portfolyo"] { --mood-accent: var(--portfolyo-accent); }
+  body:not([data-mood]) { --mood-accent: #333; }
+
+  #helmetCanvas { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 0; display: block; }
+
+.side-nav {
+  position: fixed;
+  top: 50%;
+  right: 28px;
+  transform: translateY(-50%);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.side-nav a,
+.side-nav button {
+  box-sizing: border-box;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--panel);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--line);
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  width: fit-content;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 640px) {
+  .side-nav {
+    top: auto;        
+    bottom: 20px;    
+    right: 20px;    
+    transform: none; 
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+  
+  .side-nav a,
+  .side-nav button {
+    max-width: calc(100vw - 40px);
+    text-align: right;
+  }
+}
+
+  main { position: relative; z-index: 1; }
+
+  section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 8vw;
+    position: relative;
+  }
+
+  .video-wrapper {
+    width: 100%;       
+    display: flex;       
+    justify-content: center; 
+    align-items: center;   
+    overflow: hidden;
+    border-radius: 12px;
+    }
+
+    .project-video {
+        width: 100%;          
+        height: auto;        
+        object-fit: contain; 
+        display: block;
+    }
+
+
+.project-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 8vw;
+    position: relative;
+    width: 100%;
+}
+
+.project-card {
+    max-width: 620px;
+    padding: 44px;
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    background: var(--panel);
+    border: 1px solid var(--line);
+    transition: transform 0.3s ease;
+}
+
+.project-tag {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+    background: var(--mood-accent, #333);
+    color: #fff;
+}
+
+.project-card h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(34px, 5.5vw, 64px);
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.video-wrapper {
+    width: 100%;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+}
+
+.project-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.project-card p.desc {
+    color: var(--text-dim);
+    line-height: 1.65;
+    margin-bottom: 28px;
+}
+
+.project-list {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.project-list li {
+    list-style: none;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--text-dim);
+    border-top: 1px solid var(--line);
+    padding: 10px 0;
+}
+
+.project-list li span.num {
+    font-family: var(--font-display);
+    font-size: 12px;
+    color: var(--text);
+    opacity: 0.5;
+}
+
+.project-cta {
+    display: inline-block;
+    margin-top: 30px;
+    font-family: var(--font-display);
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    color: #fff;
+    background: var(--mood-accent, #333);
+    transition: opacity 0.3s ease;
+}
+
+.project-cta:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 640px) {
+    .project-card { padding: 24px; }
+    .project-card h2 { font-size: 28px; }
+}
+
+  .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.9s ease, transform 0.9s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  .eyebrow {
+    font-family: var(--font-display);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+  }
+
+  .hero { align-items: flex-start; }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(48px, 9vw, 120px);
+    line-height: 0.98;
+    letter-spacing: -2px;
+    max-width: 900px;
+  }
+  .hero p { margin-top: 20px; max-width: 420px; font-size: 16px; color: var(--text-dim); line-height: 1.6; }
+  .scroll-cue {
+    margin-top: 60px;
+    font-family: var(--font-display);
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .scroll-cue::after {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--text-dim);
+    animation: pulseLine 1.8s ease-in-out infinite;
+  }
+  @keyframes pulseLine {
+    0%, 100% { width: 28px; opacity: 0.4; }
+    50% { width: 44px; opacity: 1; }
+  }
+
+  .intro { max-width: 640px; align-items: flex-start; }
+  .intro h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(24px, 3.4vw, 34px); line-height: 1.4; }
+  .intro h2 strong { color: var(--text); font-weight: 700; }
+
+  
+
+
+  .divider { min-height: 40vh; align-items: center; justify-content: center; }
+  .divider .line { width: 1px; height: 90px; background: linear-gradient(to bottom, transparent, var(--text-dim), transparent); }
+
+  .contact { align-items: flex-start; padding-bottom: 10vh; }
+  .contact h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(30px, 5vw, 56px);
+    letter-spacing: -1px;
+    max-width: 700px;
+  }
+  .contact a.mail {
+    margin-top: 22px;
+    font-family: var(--font-display);
+    font-size: 18px;
+    color: var(--mood-accent, var(--text));
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+  }
+  .contact .foot-meta {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 700px;
+    font-family: var(--font-display);
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--text-dim);
+  }
+
+  @media (max-width: 640px) {
+    section { padding: 0 6vw; }
+    .project-card { padding: 28px; }
+  }
+</style>
+</head>
+<body>
+
+    <canvas id="helmetCanvas"></canvas>
+    <div id="header-placeholder"></div>
+
+<main>
+
+  <section class="hero">
+    <div class="eyebrow fade-in">PROJELERİM</div>
+    <h1 class="fade-in">Clean<br>code izinde.</h1>
+    <p class="fade-in">Aşağı kaydırarak projelerimi keşfedin.</p>
+    <div class="scroll-cue fade-in">KAYDIR</div>
+  </section>
+
+  <section class="intro">
+    <div class="eyebrow fade-in">Hakkında</div>
+    <h2 class="fade-in">
+      Fikirleri dijital gerçekliğe dönüştüren, ölçeklenebilir ve kullanıcı odaklı <b>çözümler geliştiriyorum.</b>
+    </h2>
+  </section>
+
+<section id="grm" class="project-section">
+  <div class="project-card fade-in">
+    <span class="project-tag">İnşaat & Yapı</span>
+    <h2>GRM İnşaat</h2>
+    <div class="video-wrapper">
+      <video class="project-video" autoplay loop muted playsinline>
+        <source src="../img/proje-1.mp4" type="video/mp4">
+      </video>
+    </div>
+    <p class="desc">
+      Laravel altyapısıyla inşaat sektörü için hazırladığım kapsamlı bir içerik yönetim sistemi. Dinamik veri yönetimi, optimize edilmiş CRUD süreçleri ve gelişmiş güvenlik loglama mekanizmaları ile donatılmış; responsive ve kullanıcı dostu bir yönetim arayüzüne sahip uçtan uca bir yazılım çözümüdür.
+    </p>
+    <ul class="project-list">
+      <li><span class="num">01</span> Laravel</li>
+      <li><span class="num">02</span> PHP</li>
+      <li><span class="num">03</span> MySQL</li>
+      <li><span class="num">04</span> CSS3</li>
+      <li><span class="num">05</span> JS</li>
+    </ul>
+    <a href="https://github.com/edaoncel/grm_insaat" class="project-cta">GitHub →</a>
+  </div>
+</section>
+
+<section class="divider"><div class="line"></div></section>
+
+<section id="zarif" class="project-section">
+  <div class="project-card fade-in">
+    <span class="project-tag">El Sanatı</span>
+    <h2>Zarif Düğümler</h2>
+    <div class="video-wrapper">
+      <video class="project-video" autoplay loop muted playsinline>
+        <source src="../img/proje-3.mp4" type="video/mp4">
+      </video>
+    </div>
+    <p class="desc">
+      Zarif Düğümler, estetik ve işlevselliği birleştiren, kullanıcı dostu bir e-ticaret platformudur. Kapsamlı yönetici paneli sayesinde ürün, içerik ve kullanıcı yönetimi tek merkezden zahmetsizce gerçekleştirilir.
+    </p>
+    <ul class="project-list">
+      <li><span class="num">01</span> PHP</li>
+      <li><span class="num">02</span> MySQL</li>
+      <li><span class="num">03</span> CSS3</li>
+      <li><span class="num">04</span> JS</li>
+      <li><span class="num">05</span> JSON</li>
+      <li><span class="num">06</span> AJAX</li>
+    </ul>
+    <a href="https://github.com/edaoncel/zarif_dugumler" class="project-cta">GitHub →</a>
+  </div>
+</section>
+
+<section class="divider"><div class="line"></div></section>
+
+<section id="portfolyo" class="project-section">
+  <div class="project-card fade-in">
+    <span class="project-tag">Kişisel Sunum</span>
+    <h2>Modern Portfolyo</h2>
+    <div class="video-wrapper">
+      <video class="project-video" autoplay loop muted playsinline>
+        <source src="../img/proje-2.mp4" type="video/mp4">
+      </video>
+    </div>
+    <p class="desc">
+      Dijital dünyada iz bırakma tutkusuyla yola çıkan bir yazılım geliştirici olarak, kullanıcı odaklı ve estetik arayüzler tasarlıyorum. HTML, CSS ve JavaScript teknolojilerini kullanarak karmaşık fikirleri işlevsel ve etkileyici projelere dönüştürüyorum.
+    </p>
+    <ul class="project-list">
+      <li><span class="num">01</span> HTML</li>
+      <li><span class="num">02</span> CSS3</li>
+      <li><span class="num">03</span> JS</li>
+    </ul>
+    <a href="https://github.com/edaoncel/portfolyo_web_sitesi" class="project-cta">GitHub →</a>
+  </div>
+</section>
+
+  <section id="iletisim" class="contact">
+    <div class="eyebrow fade-in">İletişim</div>
+    <h2 class="fade-in">Bir proje mi konuşmak istiyorsunuz?</h2>
+    <a href="edaoncel15@gmail.com" class="mail fade-in">edaoncel15@gmail.com</a>
+  </section>
+  <div id="footer-placeholder"></div>
+</main>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module">
+    import * as THREE from 'three';
+    import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+    import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
+
+    const canvas = document.getElementById('helmetCanvas');
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.0;
+    renderer.setClearColor(0xe0deda, 1);
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.set(0, 0, 3);
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+    scene.add(ambientLight);
+    const dirLight1 = new THREE.DirectionalLight(0xffffff, 2.5);
+    dirLight1.position.set(5, 5, 5);
+    scene.add(dirLight1);
+    const dirLight2 = new THREE.DirectionalLight(0xc4a882, 1.2);
+    dirLight2.position.set(-3, 2, -2);
+    scene.add(dirLight2);
+    const dirLight3 = new THREE.DirectionalLight(0x8899bb, 0.8);
+    dirLight3.position.set(0, -3, 4);
+    scene.add(dirLight3);
+
+    const HDRI_LIGHT = 'https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/citrus_orchard_road_puresky_1k.hdr';
+    const HDRI_DARK = 'https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/qwantani_dusk_2_1k.hdr';
+    const hdriCache = {};
+
+    function loadHDRI(url) {
+      return new Promise((resolve) => {
+        if (hdriCache[url]) { resolve(hdriCache[url]); return; }
+        new RGBELoader().load(url, (texture) => {
+          texture.mapping = THREE.EquirectangularReflectionMapping;
+          hdriCache[url] = texture;
+          resolve(texture);
+        });
+      });
+    }
+
+    loadHDRI(HDRI_LIGHT).then((texture) => { scene.environment = texture; });
+    loadHDRI(HDRI_DARK);
+
+    let isDark = false;
+    const BG_LIGHT = 0xe0deda;
+    const BG_DARK = 0x141414;
+
+    document.getElementById('modeToggle').addEventListener('click', async () => {
+      isDark = !isDark;
+      document.body.classList.toggle('dark-mode', isDark);
+      document.getElementById('modeToggle').textContent = isDark ? '' : '';
+      const hdri = await loadHDRI(isDark ? HDRI_DARK : HDRI_LIGHT);
+      scene.environment = hdri;
+      renderer.setClearColor(isDark ? BG_DARK : BG_LIGHT, 1);
+      renderer.toneMappingExposure = isDark ? 1.2 : 1.0;
+    });
+
+    let helmet = null;
+    const loader = new GLTFLoader();
+    loader.load('https://threejs.org/examples/models/gltf/DamagedHelmet/glTF/DamagedHelmet.gltf', (gltf) => {
+      helmet = gltf.scene;
+      helmet.scale.set(1.2, 1.2, 1.2);
+      scene.add(helmet);
+    });
+
+    const sections = [
+      { scrollStart: 0, scrollEnd: 0.15, posX: 0.5, posY: 0, rotX: 0, rotY: 0, rotZ: 0, camZ: 3, scale: 1.2 },
+      { scrollStart: 0.15, scrollEnd: 0.35, posX: 1.5, posY: 0, rotX: 0.2, rotY: 0.8, rotZ: 0.1, camZ: 2.6, scale: 1.3 },
+      { scrollStart: 0.35, scrollEnd: 0.55, posX: -1.0, posY: 0, rotX: -0.1, rotY: 2.2, rotZ: -0.05, camZ: 2.4, scale: 1.35 },
+      { scrollStart: 0.55, scrollEnd: 0.7, posX: 0, posY: 0, rotX: 0, rotY: Math.PI, rotZ: 0, camZ: 3, scale: 1.1 },
+      { scrollStart: 0.7, scrollEnd: 0.85, posX: 0.8, posY: -0.1, rotX: 0.3, rotY: 4.5, rotZ: 0.15, camZ: 2.2, scale: 1.4 },
+      { scrollStart: 0.85, scrollEnd: 1.0, posX: -0.8, posY: 0, rotX: -0.15, rotY: Math.PI * 2, rotZ: 0.1, camZ: 2.8, scale: 1.2 },
+    ];
+
+    function lerp(a, b, t) { return a + (b - a) * t; }
+    function smoothstep(a, b, t) {
+      const x = Math.max(0, Math.min(1, (t - a) / (b - a)));
+      return x * x * (3 - 2 * x);
+    }
+
+    let scrollProgress = 0;
+    let targetScrollProgress = 0;
+    let isDragging = false;
+    let dragStartX = 0, dragStartY = 0;
+    let orbitX = 0, orbitY = 0;
+    let targetOrbitX = 0, targetOrbitY = 0;
+    const DRAG_SENSITIVITY = 0.006;
+    const ORBIT_DECAY = 0.03;
+
+    window.addEventListener('pointerdown', (e) => {
+      isDragging = true;
+      dragStartX = e.clientX;
+      dragStartY = e.clientY;
+    });
+    window.addEventListener('pointermove', (e) => {
+      if (!isDragging) return;
+      const dx = e.clientX - dragStartX;
+      const dy = e.clientY - dragStartY;
+      targetOrbitX = dx * DRAG_SENSITIVITY;
+      targetOrbitY = dy * DRAG_SENSITIVITY;
+    });
+    window.addEventListener('pointerup', () => {
+      if (isDragging) {
+        isDragging = false;
+        dragStartX = 0;
+        dragStartY = 0;
+      }
+    });
+    window.addEventListener('scroll', () => {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      targetScrollProgress = scrollHeight > 0 ? window.scrollY / scrollHeight : 0;
+    });
+
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    function animate() {
+      requestAnimationFrame(animate);
+      scrollProgress += (targetScrollProgress - scrollProgress) * 0.06;
+
+      if (helmet) {
+        let currentSection = sections[0];
+        let nextSection = sections[1] || sections[0];
+        let localT = 0;
+
+        for (let i = 0; i < sections.length; i++) {
+          if (scrollProgress >= sections[i].scrollStart && scrollProgress <= sections[i].scrollEnd) {
+            currentSection = sections[i];
+            nextSection = sections[Math.min(i + 1, sections.length - 1)];
+            localT = smoothstep(currentSection.scrollStart, currentSection.scrollEnd, scrollProgress);
+            break;
+          }
+          if (i === sections.length - 1) {
+            currentSection = sections[i];
+            nextSection = sections[i];
+            localT = 1;
+          }
+        }
+
+        const posX = lerp(currentSection.posX, nextSection.posX, localT);
+        const posY = lerp(currentSection.posY, nextSection.posY, localT);
+        const rotX = lerp(currentSection.rotX, nextSection.rotX, localT);
+        const rotY = lerp(currentSection.rotY, nextSection.rotY, localT);
+        const rotZ = lerp(currentSection.rotZ, nextSection.rotZ, localT);
+        const camZ = lerp(currentSection.camZ, nextSection.camZ, localT);
+        const scale = lerp(currentSection.scale, nextSection.scale, localT);
+
+        if (isDragging) {
+          orbitX += (targetOrbitX - orbitX) * 0.12;
+          orbitY += (targetOrbitY - orbitY) * 0.12;
+        } else {
+          orbitX += (0 - orbitX) * ORBIT_DECAY;
+          orbitY += (0 - orbitY) * ORBIT_DECAY;
+          targetOrbitX += (0 - targetOrbitX) * ORBIT_DECAY;
+          targetOrbitY += (0 - targetOrbitY) * ORBIT_DECAY;
+        }
+
+        helmet.position.x = posX;
+        helmet.position.y = posY;
+        helmet.rotation.x = rotX + orbitY;
+        helmet.rotation.y = rotY + Math.sin(Date.now() * 0.0003) * 0.05 + orbitX;
+        helmet.rotation.z = rotZ;
+        helmet.scale.setScalar(scale);
+        camera.position.z = camZ;
+      }
+
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    setTimeout(() => {
+      document.querySelector('.hero .fade-in')?.classList.add('visible');
+    }, 300);
+</script>
+
+<script>
+  const moodSections = [
+    { id: 'grm', mood: 'grm' },
+    { id: 'zarif', mood: 'zarif' },
+    { id: 'portfolyo', mood: 'portfolyo' }
+  ];
+  const moodObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const match = moodSections.find(s => s.id === entry.target.id);
+        if (match) document.body.setAttribute('data-mood', match.mood);
+      }
+    });
+  }, { threshold: 0.4 });
+  moodSections.forEach(({ id }) => {
+    const el = document.getElementById(id);
+    if (el) moodObserver.observe(el);
+  });
+
+  // Sağdaki menüde aktif linki vurgula
+  const sideLinks = document.querySelectorAll('.side-nav a');
+  const linkObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        sideLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href').endsWith('#' + entry.target.id));
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+  ['grm', 'zarif', 'portfolyo', 'iletisim'].forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) linkObserver.observe(el);
+  });
+</script>
+
+  <script>
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('nav-links');
+      const modeToggle = document.getElementById('modeToggle');
+
+      // Hamburger tıklanınca: hem kendisi hem menü aynı class'ı paylaşsın
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('open');
+      });
+
+      // Link tıklanınca menüyü kapat
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          navLinks.classList.remove('open');
+        });
+      });
+
+      // Mod değiştirme
+      modeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+      });
+    })
+    .catch(err => console.error('Header yüklenemedi:', err));
+  </script>
+  <script>
+  function loadComponent(url, elementId) {
+    fetch(url)
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById(elementId).innerHTML = data;
+        
+        // Eğer yüklenen dosya header ise hamburger menü eventlerini tekrar tetikle
+        if (elementId === 'header-placeholder') {
+          initHeaderEvents();
+        }
+      })
+      .catch(err => console.error(url + ' yüklenemedi:', err));
+  }
+
+  // Header eventlerini başlatan fonksiyon
+  function initHeaderEvents() {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    const modeToggle = document.getElementById('modeToggle');
+
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('open');
+      });
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          navLinks.classList.remove('open');
+        });
+      });
+    }
+
+    if (modeToggle) {
+      modeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+      });
+    }
+  }
+
+  // Fonksiyonları çalıştır
+  loadComponent('header.html', 'header-placeholder');
+  loadComponent('footer.html', 'footer-placeholder');
+</script>
+
+</body>
+</html>
